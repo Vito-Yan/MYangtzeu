@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 作者：尚硅谷-杨光福 on 2016/8/13 15:39
- * 微信：yangguangfu520
- * QQ号：541433511
+ * 作者：Vito-Yan
  * 作用：基本的Fragment，LeftMenuFragment和ContentFragment将继承它
  */
 public abstract class BaseFragment extends Fragment {
