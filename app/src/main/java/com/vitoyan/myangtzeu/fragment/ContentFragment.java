@@ -1,10 +1,10 @@
 package com.vitoyan.myangtzeu.fragment;
 
-import android.graphics.Color;
-import android.view.Gravity;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.RadioGroup;
 
+import com.vitoyan.myangtzeu.R;
 import com.vitoyan.myangtzeu.base.BaseFragment;
 import com.vitoyan.myangtzeu.utils.LogUtil;
 
@@ -14,23 +14,25 @@ import com.vitoyan.myangtzeu.utils.LogUtil;
  */
 public class ContentFragment extends BaseFragment {
 
-    private TextView textView;
+    private ViewPager viewpager;
+    private RadioGroup rg_main;
 
     @Override
     public View initView() {
         LogUtil.e("正文视图被初始化了");
-        textView = new TextView(context);
-        textView.setTextSize(23);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(Color.BLACK);
-        return textView;
+        View view = View.inflate(context, R.layout.content_fragment,null);
+        viewpager = view.findViewById(R.id.viewpager);
+        rg_main = view.findViewById(R.id.rg_main);
+        return view;
     }
 
     @Override
     public void initData() {
         super.initData();
         LogUtil.e("正文数据被初始化了");
-        textView.setText("正文页面");
+
+        //设置默认选中首页
+        rg_main.check(R.id.rb_home);
     }
 
 }

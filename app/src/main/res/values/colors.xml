@@ -3,4 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="zhihu_blue_button">#989898</color>
+    <color name="zhihu_blue_button_press">#0F88EB</color>
 </resources>

@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <com.atguigu.beijingnews.view.NoScrollViewPager
+    <com.vitoyan.myangtzeu.view.NoScrollViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,44 +22,36 @@
             android:id="@+id/rb_home"
             android:drawableTop="@drawable/rb_home_drawable_selector"
             android:gravity="center"
-            android:text="主页"
+            android:text="首页"
             style="@style/bottom_tag_style"
             />
 
         <RadioButton
-            android:id="@+id/rb_newscenter"
-            android:drawableTop="@drawable/rb_newscenter_drawable_selector"
+            android:id="@+id/rb_topic"
+            android:drawableTop="@drawable/rb_topic_drawable_selector"
             android:gravity="center"
-            android:text="新闻"
+            android:text="话题"
             style="@style/bottom_tag_style"
             />
 
         <RadioButton
-            android:id="@+id/rb_smartservice"
-            android:drawableTop="@drawable/rb_smartservice_drawable_selector"
+            android:id="@+id/rb_find"
+            android:drawableTop="@drawable/rb_find_drawable_selector"
             android:gravity="center"
-            android:text="商城"
+            android:text="发现"
             style="@style/bottom_tag_style"
             />
-
-
 
 
         <RadioButton
-            android:id="@+id/rb_govaffair"
-            android:drawableTop="@drawable/rb_govaffair_drawable_selector"
+            android:id="@+id/rb_my"
+            android:drawableTop="@drawable/rb_my_drawable_selector"
             android:gravity="center"
-            android:text="购物车"
+            android:text="我的"
             style="@style/bottom_tag_style"
             />
 
-        <RadioButton
-            android:id="@+id/rb_setting"
-            android:drawableTop="@drawable/rb_setting_drawable_selector"
-            android:gravity="center"
-            android:text="设置"
-            style="@style/bottom_tag_style"
-            />
+
 
 
     </RadioGroup>
