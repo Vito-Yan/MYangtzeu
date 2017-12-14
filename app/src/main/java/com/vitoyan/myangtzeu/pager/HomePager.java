@@ -2,20 +2,40 @@ package com.vitoyan.myangtzeu.pager;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.SystemClock;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.vitoyan.myangtzeu.activity.MainActivity;
 import com.vitoyan.myangtzeu.base.BasePager;
+import com.vitoyan.myangtzeu.fragment.LeftmenuFragment;
+import com.vitoyan.myangtzeu.pojo.HomePagerBean;
+import com.vitoyan.myangtzeu.utils.CacheUtils;
+import com.vitoyan.myangtzeu.utils.Constants;
 import com.vitoyan.myangtzeu.utils.LogUtil;
 
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
+import java.util.List;
 
 /**
  * 作者：Vito-Yan
  * 作用：首页页面
  */
 public class HomePager extends BasePager {
+
+    /**
+     * 左侧菜单对应的数据集合
+     */
+    private List<HomePagerBean.DataEntity> data;
+
+    private long startTime;
+
     public HomePager(Context context) {
         super(context);
     }
@@ -37,5 +57,102 @@ public class HomePager extends BasePager {
         //4.绑定数据
         textView.setText("首页页面内容");
 
+        //得到缓存数据
+        String saveJson = CacheUtils.getString(context,Constants.HOME_PAGER_URL);//""
+
+        if(!TextUtils.isEmpty(saveJson)){
+            processData(saveJson);
+        }
+
+        startTime = SystemClock.uptimeMillis();
+        //联网请求数据
+        getDataFromNet();
+        //        getDataFromNetByVolley();
+
     }
+
+    /**
+     * 使用xUtils3联网请求数据
+     */
+    private void getDataFromNet() {
+
+        RequestParams params = new RequestParams(Constants.HOME_PAGER_URL);
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                long endTime = SystemClock.uptimeMillis();
+                long passTime = endTime - startTime;
+
+                LogUtil.e("xUtils3--passTime==" + passTime);
+
+                LogUtil.e("使用xUtils3联网请求成功==" + result);
+
+                //缓存数据
+                CacheUtils.putString(context,Constants.HOME_PAGER_URL,result);
+
+                processData(result);
+                //设置适配器
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                LogUtil.e("使用xUtils3联网请求失败==" + ex.getMessage());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+                LogUtil.e("使用xUtils3-onCancelled==" + cex.getMessage());
+            }
+
+            @Override
+            public void onFinished() {
+                LogUtil.e("使用xUtils3-onFinished");
+            }
+        });
+
+    }
+
+    /**
+     * 解析json数据和显示数据
+     *
+     * @param json
+     */
+    private void processData(String json) {
+
+        HomePagerBean bean = parsedJson(json);
+//        HomePagerBean2 bean = parsedJson2(json);
+//        String title = bean.getData().get(0).getChildren().get(1).getTitle();
+
+
+//        LogUtil.e("使用Gson解析json数据成功-title==" + title);
+        String title2 = bean.getData().get(0).getChildren().get(1).getTitle();
+        LogUtil.e("使用Gson解析json数据成功HomePagerBean2-title2-------------------------==" + title2);
+        //给左侧菜单传递数据
+        data = bean.getData();
+
+        MainActivity mainActivity = (MainActivity) context;
+        //得到左侧菜单
+        LeftmenuFragment leftmenuFragment = mainActivity.getLeftmenuFragment();
+
+
+        //把数据传递给左侧菜单
+        leftmenuFragment.setData(data);
+
+
+    }
+
+    /**
+     * 解析json数据：1,使用系统的API解析json；2,使用第三方框架解析json数据，例如Gson,fastjson
+     *
+     * @param json
+     * @return
+     */
+    private HomePagerBean parsedJson(String json) {
+        //        Gson gson = new Gson();
+        //        HomePagerBean bean = gson.fromJson(json,HomePagerBean.class);
+        return new Gson().fromJson(json, HomePagerBean.class);
+    }
+
 }

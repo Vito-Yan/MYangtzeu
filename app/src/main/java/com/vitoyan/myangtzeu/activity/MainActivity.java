@@ -61,7 +61,7 @@ public class MainActivity extends SlidingFragmentActivity {
         screeHeight = outmetrics.heightPixels;
         //6.设置主页占据的宽度
 //        slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this, 200));
-        slidingMenu.setBehindOffset((int) (screeWidth*0.625));
+        slidingMenu.setBehindOffset((int) (screeWidth*0.425));
     }
 
     private void initFragment() {
@@ -78,7 +78,25 @@ public class MainActivity extends SlidingFragmentActivity {
 //        getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_content,new ContentFragment(), MAIN_CONTENT_TAG).replace(R.id.fl_leftmenu,new LeftmenuFragment(), LEFTMENU_TAG).commit();
 
 
+    }
 
+    /**
+     * 得到左侧菜单Fragment
+     * @return
+     */
+    public LeftmenuFragment getLeftmenuFragment() {
+        //        FragmentManager fm = getSupportFragmentManager();
+        //        LeftmenuFragment leftmenuFragment = (LeftmenuFragment) fm.findFragmentByTag(LEFTMENU_TAG);
+
+        return  (LeftmenuFragment) getSupportFragmentManager().findFragmentByTag(LEFTMENU_TAG);
+    }
+
+    /**
+     * 得到正文Fragment
+     * @return
+     */
+    public ContentFragment getContentFragment() {
+        return  (ContentFragment) getSupportFragmentManager().findFragmentByTag(MAIN_CONTENT_TAG);
     }
 
 }

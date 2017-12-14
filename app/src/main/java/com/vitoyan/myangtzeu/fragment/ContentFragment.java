@@ -56,7 +56,7 @@ public class ContentFragment extends BaseFragment {
         super.initData();
         LogUtil.e("正文数据被初始化了");
 
-        //初始化五个页面，并且放入集合中
+        //初始化四个页面，并且放入集合中
         basePagers = new ArrayList<>();
         basePagers.add(new HomePager(context));//首页页面
         basePagers.add(new TopicPager(context));//话题页面
