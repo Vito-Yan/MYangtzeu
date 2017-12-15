@@ -18,7 +18,7 @@
         <item name="android:drawablePadding">1dp</item>
         <item name="android:textColor">@drawable/bottom_textcolor_drawable_selector</item>
 
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:layout_weight">1</item>
     </style>
 </resources>
