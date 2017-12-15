@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.vitoyan.myangtzeu.R;
 import com.vitoyan.myangtzeu.activity.MainActivity;
 import com.vitoyan.myangtzeu.base.BaseFragment;
+import com.vitoyan.myangtzeu.pager.HomePager;
 import com.vitoyan.myangtzeu.pojo.HomePagerBean;
 import com.vitoyan.myangtzeu.utils.DensityUtil;
 import com.vitoyan.myangtzeu.utils.LogUtil;
@@ -59,7 +60,7 @@ public class LeftmenuFragment extends BaseFragment {
                 mainActivity.getSlidingMenu().toggle();//关<->开
 
                 //3.切换到对应的详情页面：新闻详情页面，专题详情页面，图组详情页面，互动详情页面
-                //swichPager(prePosition);
+                swichPager(prePosition);
 
             }
         });
@@ -67,6 +68,16 @@ public class LeftmenuFragment extends BaseFragment {
         return listView;
     }
 
+    /**
+     * 根据位置切换不同详情页面
+     * @param position
+     */
+    private void swichPager(int position) {
+        MainActivity mainActivity = (MainActivity) context;
+        ContentFragment contentFragment = mainActivity.getContentFragment();
+        HomePager homePager = contentFragment.getHomePager();
+        homePager.swichPager(position);
+    }
 
     @Override
     public void initData() {

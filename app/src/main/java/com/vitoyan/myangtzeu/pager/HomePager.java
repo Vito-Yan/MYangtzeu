@@ -11,7 +11,13 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.vitoyan.myangtzeu.activity.MainActivity;
 import com.vitoyan.myangtzeu.base.BasePager;
+import com.vitoyan.myangtzeu.base.MenuDetaiBasePager;
 import com.vitoyan.myangtzeu.fragment.LeftmenuFragment;
+import com.vitoyan.myangtzeu.menudatailpager.News1MenuDetailPager;
+import com.vitoyan.myangtzeu.menudatailpager.News2MenuDetailPager;
+import com.vitoyan.myangtzeu.menudatailpager.News3MenuDetailPager;
+import com.vitoyan.myangtzeu.menudatailpager.News4MenuDetailPager;
+import com.vitoyan.myangtzeu.menudatailpager.NewsMenuDetailPager;
 import com.vitoyan.myangtzeu.pojo.HomePagerBean;
 import com.vitoyan.myangtzeu.utils.CacheUtils;
 import com.vitoyan.myangtzeu.utils.Constants;
@@ -21,6 +27,7 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,6 +40,11 @@ public class HomePager extends BasePager {
      * 左侧菜单对应的数据集合
      */
     private List<HomePagerBean.DataEntity> data;
+
+    /**
+     * 详情页面的集合
+     */
+    private ArrayList<MenuDetaiBasePager> detaiBasePagers;
 
     private long startTime;
 
@@ -136,6 +148,13 @@ public class HomePager extends BasePager {
         //得到左侧菜单
         LeftmenuFragment leftmenuFragment = mainActivity.getLeftmenuFragment();
 
+        //添加详情页面
+        detaiBasePagers = new ArrayList<>();
+        detaiBasePagers.add(new NewsMenuDetailPager(context));//新闻详情页面
+        detaiBasePagers.add(new News1MenuDetailPager(context));//新闻1详情页面
+        detaiBasePagers.add(new News2MenuDetailPager(context));//新闻2详情页面
+        detaiBasePagers.add(new News3MenuDetailPager(context));//新闻3详情页面
+        detaiBasePagers.add(new News4MenuDetailPager(context));//新闻4详情页面
 
         //把数据传递给左侧菜单
         leftmenuFragment.setData(data);
@@ -154,5 +173,26 @@ public class HomePager extends BasePager {
         //        HomePagerBean bean = gson.fromJson(json,HomePagerBean.class);
         return new Gson().fromJson(json, HomePagerBean.class);
     }
+
+    /**
+     * 根据位置切换详情页面
+     *
+     * @param position
+     */
+    public void swichPager(int position) {
+        //1.设置标题
+        tv_title.setText(data.get(position).getTitle());
+        //2.移除之前内容
+        fl_content.removeAllViews();//移除之前的视图
+
+        //3.添加新内容
+        MenuDetaiBasePager detaiBasePager = detaiBasePagers.get(position);//
+        View rootView = detaiBasePager.rootView;
+        detaiBasePager.initData();//初始化数据
+
+
+        fl_content.addView(rootView);
+    }
+
 
 }

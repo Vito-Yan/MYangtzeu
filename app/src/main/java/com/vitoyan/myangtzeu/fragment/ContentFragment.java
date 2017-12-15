@@ -82,6 +82,13 @@ public class ContentFragment extends BaseFragment {
         isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
     }
 
+    /**
+     * 得到首页
+     * @return
+     */
+    public HomePager getHomePager() {
+        return (HomePager) basePagers.get(0);
+    }
 
     class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
 
