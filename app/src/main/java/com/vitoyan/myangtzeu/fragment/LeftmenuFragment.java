@@ -39,7 +39,7 @@ public class LeftmenuFragment extends BaseFragment {
     public View initView() {
         LogUtil.e("左侧菜单视图被初始化了");
         listView = new ListView(context);
-        listView.setPadding(0, DensityUtil.dip2px(context,40),0,0);
+        listView.setPadding(DensityUtil.dip2px(context,20), DensityUtil.dip2px(context,220),0,0);
         listView.setDividerHeight(0);//设置分割线高度为0
         listView.setCacheColorHint(Color.TRANSPARENT);
 

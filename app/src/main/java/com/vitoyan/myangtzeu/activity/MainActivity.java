@@ -55,13 +55,16 @@ public class MainActivity extends SlidingFragmentActivity {
         //5.设置滑动模式：滑动边缘，全屏滑动，不可以滑动
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
+        //6.设置滑动时ContentFragment模糊
+        slidingMenu.setOffsetFadeDegree(0.4f);
+
         DisplayMetrics outmetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(outmetrics);
         screeWidth = outmetrics.widthPixels;
         screeHeight = outmetrics.heightPixels;
         //6.设置主页占据的宽度
 //        slidingMenu.setBehindOffset(DensityUtil.dip2px(MainActivity.this, 200));
-        slidingMenu.setBehindOffset((int) (screeWidth*0.425));
+        slidingMenu.setBehindOffset((int) (screeWidth*0.325));
     }
 
     private void initFragment() {
@@ -98,5 +101,6 @@ public class MainActivity extends SlidingFragmentActivity {
     public ContentFragment getContentFragment() {
         return  (ContentFragment) getSupportFragmentManager().findFragmentByTag(MAIN_CONTENT_TAG);
     }
+
 
 }
