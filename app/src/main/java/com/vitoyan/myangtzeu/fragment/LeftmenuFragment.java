@@ -25,7 +25,7 @@ import java.util.List;
 public class LeftmenuFragment extends BaseFragment {
 
 
-    private List<HomePagerBean.DataEntity> data;
+    private List<HomePagerBean.DetailPagerData> data;
 
     private LeftmenuFragmentAdapter adapter;
 
@@ -89,7 +89,7 @@ public class LeftmenuFragment extends BaseFragment {
      * 接收数据
      * @param data
      */
-    public void setData(List<HomePagerBean.DataEntity> data) {
+    public void setData(List<HomePagerBean.DetailPagerData> data) {
         this.data = data;
         for(int i=0;i<data.size();i++){
             LogUtil.e("title=="+data.get(i).getTitle());
@@ -100,7 +100,7 @@ public class LeftmenuFragment extends BaseFragment {
         listView.setAdapter(adapter);
 
         //设置默认页面
-        //swichPager(prePosition);
+        swichPager(prePosition);
 
     }
 

@@ -22,7 +22,7 @@ public class CacheUtils {
      * @return
      */
     public static boolean getBoolean(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences("atguigu", Context.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences("vitoyan", Context.MODE_PRIVATE);
         return sp.getBoolean(key, false);
     }
 
@@ -34,7 +34,7 @@ public class CacheUtils {
      * @param value
      */
     public static void putBoolean(Context context, String key, boolean value) {
-        SharedPreferences sp = context.getSharedPreferences("atguigu", Context.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences("vitoyan", Context.MODE_PRIVATE);
         sp.edit().putBoolean(key, value).commit();
     }
 
@@ -47,14 +47,14 @@ public class CacheUtils {
      */
     public static void putString(Context context, String key, String value) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            ///mnt/sdcard/beijingnews/files/llkskljskljklsjklsllsl
+            ///mnt/sdcard/myangtzeu/files/llkskljskljklsjklsllsl
             try {
                 String fileName = MD5Encoder.encode(key);//llkskljskljklsjklsllsl
 
-                ///mnt/sdcard/beijingnews/files/llkskljskljklsjklsllsl
-                File file = new File(Environment.getExternalStorageDirectory() + "/beijingnews/files", fileName);
+                ///mnt/sdcard/myangtzeu/files/llkskljskljklsjklsllsl
+                File file = new File(Environment.getExternalStorageDirectory() + "/myangtzeu/files", fileName);
 
-                File parentFile = file.getParentFile();//mnt/sdcard/beijingnews/files
+                File parentFile = file.getParentFile();//mnt/sdcard/myangtzeu/files
                 if (!parentFile.exists()) {
                     //创建目录
                     parentFile.mkdirs();
@@ -74,7 +74,7 @@ public class CacheUtils {
                 LogUtil.e("文本数据缓存失败");
             }
         } else {
-            SharedPreferences sp = context.getSharedPreferences("atguigu", Context.MODE_PRIVATE);
+            SharedPreferences sp = context.getSharedPreferences("vitoyan", Context.MODE_PRIVATE);
             sp.edit().putString(key, value).commit();
         }
 
@@ -93,8 +93,8 @@ public class CacheUtils {
             try {
                 String fileName = MD5Encoder.encode(key);//llkskljskljklsjklsllsl
 
-                ///mnt/sdcard/beijingnews/files/llkskljskljklsjklsllsl
-                File file = new File(Environment.getExternalStorageDirectory() + "/beijingnews/files", fileName);
+                ///mnt/sdcard/myangtzeu/files/llkskljskljklsjklsllsl
+                File file = new File(Environment.getExternalStorageDirectory() + "/myangtzeu/files", fileName);
 
 
                 if (file.exists()) {
@@ -121,7 +121,7 @@ public class CacheUtils {
                 LogUtil.e("图片获取失败");
             }
         } else {
-            SharedPreferences sp = context.getSharedPreferences("atguigu", Context.MODE_PRIVATE);
+            SharedPreferences sp = context.getSharedPreferences("vitoyan", Context.MODE_PRIVATE);
             result = sp.getString(key, "");
         }
         return result;

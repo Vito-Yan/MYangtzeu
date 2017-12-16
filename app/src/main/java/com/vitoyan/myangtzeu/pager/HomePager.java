@@ -39,7 +39,7 @@ public class HomePager extends BasePager {
     /**
      * 左侧菜单对应的数据集合
      */
-    private List<HomePagerBean.DataEntity> data;
+    private List<HomePagerBean.DetailPagerData> data;
 
     /**
      * 详情页面的集合
@@ -150,7 +150,7 @@ public class HomePager extends BasePager {
 
         //添加详情页面
         detaiBasePagers = new ArrayList<>();
-        detaiBasePagers.add(new NewsMenuDetailPager(context));//新闻详情页面
+        detaiBasePagers.add(new NewsMenuDetailPager(context,data.get(0)));//新闻详情页面
         detaiBasePagers.add(new News1MenuDetailPager(context));//新闻1详情页面
         detaiBasePagers.add(new News2MenuDetailPager(context));//新闻2详情页面
         detaiBasePagers.add(new News3MenuDetailPager(context));//新闻3详情页面

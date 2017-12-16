@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_search_url_text.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__light_theme.xml",
+        "source": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_spinner.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_default.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_btn_colored_text_material.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_edittext.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "F:\\Android\\SDK\\VM\\.android\\build-cache\\d35a3ff79978e993e7be17c89062cb8d05c1f905\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\vpi__dark_theme.xml",
+        "source": "F:\\Android\\Projects\\myangtzeu\\ViewPagerIndicator\\build\\intermediates\\bundles\\debug\\res\\color\\vpi__dark_theme.xml"
+    }
+]
