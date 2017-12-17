@@ -31,4 +31,5 @@ dependencies {
     compile project(':xutils')
     compile files('libs/gson-2.2.1.jar')
     compile project(':ViewPagerIndicator')
+    compile 'com.android.support:design:26.+'
 }

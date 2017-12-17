@@ -1,13 +1,15 @@
 package com.vitoyan.myangtzeu.menudatailpager;
 
 import android.content.Context;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.viewpagerindicator.TabPageIndicator;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.vitoyan.myangtzeu.R;
+import com.vitoyan.myangtzeu.activity.MainActivity;
 import com.vitoyan.myangtzeu.base.MenuDetaiBasePager;
 import com.vitoyan.myangtzeu.menudatailpager.tabdetailpager.TabDetailPager;
 import com.vitoyan.myangtzeu.pojo.HomePagerBean;
@@ -25,8 +27,8 @@ import java.util.List;
  */
 public class NewsMenuDetailPager extends MenuDetaiBasePager {
 
-    @ViewInject(R.id.tabPageIndicator)
-    private TabPageIndicator tabPageIndicator;
+    @ViewInject(R.id.tablayout)
+    private TabLayout tabLayout;
 
     @ViewInject(R.id.viewpager)
     private ViewPager viewPager;
@@ -68,8 +70,53 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
         //设置ViewPager的适配器
         viewPager.setAdapter(new MyNewsMenuDetailPagerAdapter());
         //ViewPager和TabPageIndicator关联
-        tabPageIndicator.setViewPager(viewPager);
+        //        TabPageIndicator.setViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
 
+        //注意以后监听页面的变化 ，TabPageIndicator监听页面的变化
+        //        TabPageIndicator.setOnPageChangeListener(new MyOnPageChangeListener());
+        viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
+        //设置滑动或者固定
+        //        tabLayout.setTabMode(TabLayout.MODE_FIXED);//导致没法显示
+//        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+//        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+
+
+    }
+
+//    private int tempPositon = 0 ;
+
+    class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            if(position==0){
+                //SlidingMenu可以全屏滑动
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_FULLSCREEN);
+            }else{
+                //SlidingMenu不可以滑动
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
+            }
+//            tempPositon = position;
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    }
+
+    /**
+     根据传人的参数设置是否让SlidingMenu可以滑动
+     */
+    private void isEnableSlidingMenu(int touchmodeFullscreen) {
+        MainActivity mainActivity = (MainActivity) context;
+        mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter {
