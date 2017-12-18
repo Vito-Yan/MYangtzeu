@@ -1,11 +1,14 @@
 package com.vitoyan.myangtzeu.menudatailpager;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.vitoyan.myangtzeu.R;
@@ -20,6 +23,8 @@ import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import java.lang.reflect.Field;
 
 /**
  * 作者：Vito-Yan
@@ -44,7 +49,6 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
     private ArrayList<TabDetailPager> tabDetailPagers;
 
 
-
     public NewsMenuDetailPager(Context context, HomePagerBean.DetailPagerData detailPagerData) {
         super(context);
         children = detailPagerData.getChildren();
@@ -52,8 +56,8 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
 
     @Override
     public View initView() {
-        View view = View.inflate(context, R.layout.newsmenu_detail_pager,null);
-        x.view().inject(NewsMenuDetailPager.this,view);
+        View view = View.inflate(context, R.layout.newsmenu_detail_pager, null);
+        x.view().inject(NewsMenuDetailPager.this, view);
         return view;
     }
 
@@ -64,8 +68,8 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
         LogUtil.e("React Native页面数据被初始化了..");
         //准备新闻详情页面的数据
         tabDetailPagers = new ArrayList<>();
-        for(int i=0;i<children.size();i++){
-            tabDetailPagers.add(new TabDetailPager(context,children.get(i)));
+        for (int i = 0; i < children.size(); i++) {
+            tabDetailPagers.add(new TabDetailPager(context, children.get(i)));
         }
         //设置ViewPager的适配器
         viewPager.setAdapter(new MyNewsMenuDetailPagerAdapter());
@@ -78,15 +82,20 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
         viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
         //设置滑动或者固定
         //        tabLayout.setTabMode(TabLayout.MODE_FIXED);//导致没法显示
-//        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-//        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
-
-
+        //        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        //        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                setIndicator(tabLayout, 60, 60);
+            }
+        });
     }
 
-//    private int tempPositon = 0 ;
 
-    class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
+    //    private int tempPositon = 0 ;
+
+    class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -95,14 +104,14 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
 
         @Override
         public void onPageSelected(int position) {
-            if(position==0){
+            if (position == 0) {
                 //SlidingMenu可以全屏滑动
                 isEnableSlidingMenu(SlidingMenu.TOUCHMODE_FULLSCREEN);
-            }else{
+            } else {
                 //SlidingMenu不可以滑动
                 isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
             }
-//            tempPositon = position;
+            //            tempPositon = position;
         }
 
         @Override
@@ -112,12 +121,13 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
     }
 
     /**
-     根据传人的参数设置是否让SlidingMenu可以滑动
+     * 根据传人的参数设置是否让SlidingMenu可以滑动
      */
     private void isEnableSlidingMenu(int touchmodeFullscreen) {
         MainActivity mainActivity = (MainActivity) context;
         mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
+
 
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter {
 
@@ -133,7 +143,7 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            TabDetailPager tabDetailPager  =tabDetailPagers.get(position);
+            TabDetailPager tabDetailPager = tabDetailPagers.get(position);
             View rootView = tabDetailPager.rootView;
             tabDetailPager.initData();//初始化数据
             container.addView(rootView);
@@ -147,8 +157,39 @@ public class NewsMenuDetailPager extends MenuDetaiBasePager {
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view==object;
+            return view == object;
         }
     }
 
+    private void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
+        Class<?> tabLayout = tabs.getClass();
+        Field tabStrip = null;
+        try {
+            tabStrip = tabLayout.getDeclaredField("mTabStrip");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
+        tabStrip.setAccessible(true);
+        LinearLayout llTab = null;
+        try {
+            llTab = (LinearLayout) tabStrip.get(tabs);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        int left = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, leftDip, Resources.getSystem().getDisplayMetrics());
+        int right = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, rightDip, Resources.getSystem().getDisplayMetrics());
+
+        for (int i = 0; i < llTab.getChildCount(); i++) {
+            View child = llTab.getChildAt(i);
+            child.setPadding(0, 0, 0, 0);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
+            params.leftMargin = left;
+            params.rightMargin = right;
+            child.setLayoutParams(params);
+            child.invalidate();
+        }
+
+    }
 }

@@ -24,8 +24,6 @@
 
     <style name="MyTabLayout" parent="Widget.Design.TabLayout">
 
-        <item name="tabMaxWidth">72dp</item>
-        <item name="tabMinWidth">72dp</item>
         <item name="tabIndicatorColor">@color/zhihu_blue_button_press</item>
         <item name="tabIndicatorHeight">2dp</item>
         <item name="tabTextAppearance">@style/MyTabTextAppearance</item>
