@@ -77,7 +77,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            <!--android:theme="@style/Theme.PageIndicatorDefaults" />-->
+        <!--android:theme="@style/Theme.PageIndicatorDefaults" />-->
         <!--<activity android:name=".activity.NewsDetailActivity"></activity>-->
         <!--&lt;!&ndash; Rich push 核心功能 since 2.0.6&ndash;&gt;-->
         <!--<activity-->

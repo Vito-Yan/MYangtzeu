@@ -1,1 +1,1 @@
-include ':app', ':SlidingMenu', ':xutils', ':ViewPagerIndicator'
+include ':app', ':SlidingMenu', ':xutils'
