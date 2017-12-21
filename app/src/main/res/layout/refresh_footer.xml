@@ -20,8 +20,8 @@
         android:layout_marginLeft="8dp"
         android:gravity="center_horizontal"
         android:text="加载更多..."
-        android:textColor="#ff0000"
-        android:textSize="25sp" />
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

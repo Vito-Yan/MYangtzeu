@@ -15,7 +15,7 @@
         <item name="android:layout_gravity">center_vertical</item>
 
         <item name="android:button">@null</item>
-        <item name="android:drawablePadding">1dp</item>
+        <item name="android:drawablePadding">0dp</item>
         <item name="android:textColor">@drawable/bottom_textcolor_drawable_selector</item>
 
         <item name="android:textSize">12sp</item>
