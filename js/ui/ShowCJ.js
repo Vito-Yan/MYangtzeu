@@ -6,7 +6,7 @@ import {
     ToolbarAndroid,
     Text
 } from 'react-native';
-export default class LoginSuccess extends React.Component {
+export default class ShowCJ extends React.Component {
     constructor(props){
         super(props);
         this.state = {};

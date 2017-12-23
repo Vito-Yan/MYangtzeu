@@ -68,8 +68,8 @@ export default class LoginActivity extends Component {
      const { navigator } = this.props;
      if (navigator) {
        navigator.push({
-         name : 'LoginSuccess',
-         component : LoginSuccess,
+         name : 'ShowCJ',
+         component : ShowCJ,
        });
      }
    }
