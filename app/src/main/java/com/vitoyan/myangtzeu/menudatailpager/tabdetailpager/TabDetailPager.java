@@ -1,6 +1,7 @@
 package com.vitoyan.myangtzeu.menudatailpager.tabdetailpager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
@@ -21,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
 import com.vitoyan.myangtzeu.R;
+import com.vitoyan.myangtzeu.activity.NewsDetailActivity;
 import com.vitoyan.myangtzeu.base.MenuDetaiBasePager;
 import com.vitoyan.myangtzeu.pojo.HomePagerBean;
 import com.vitoyan.myangtzeu.pojo.TabDetailPagerBean;
@@ -138,9 +140,9 @@ public class TabDetailPager extends MenuDetaiBasePager {
             }
 
             //跳转到新闻浏览页面
-//            Intent intent = new Intent(context,NewsDetailActivity.class);
-//            intent.putExtra("url",Constants.BASE_URL+newsData.getUrl());
-//            context.startActivity(intent);
+            Intent intent = new Intent(context, NewsDetailActivity.class);
+            intent.putExtra("url",Constants.BASE_URL+newsData.getUrl());
+            context.startActivity(intent);
 
 
         }

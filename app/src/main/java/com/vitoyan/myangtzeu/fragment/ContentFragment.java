@@ -1,11 +1,13 @@
 package com.vitoyan.myangtzeu.fragment;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.RadioGroup;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.vitoyan.myangtzeu.R;
+import com.vitoyan.myangtzeu.activity.FindActivity;
 import com.vitoyan.myangtzeu.activity.MainActivity;
 import com.vitoyan.myangtzeu.adapter.ContentFragmentAdapter;
 import com.vitoyan.myangtzeu.base.BaseFragment;
@@ -133,8 +135,11 @@ public class ContentFragment extends BaseFragment {
                     isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
                     break;
                 case R.id.rb_find://发现radioButton的id
-                    viewpager.setCurrentItem(2,false);
-                    isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
+//                    viewpager.setCurrentItem(2,false);
+//                    isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
+                    Intent intent = new Intent(context, FindActivity.class);
+//                    intent.putExtra("url", Constants.BASE_URL+newsData.getUrl());
+                    context.startActivity(intent);
                     break;
                 case R.id.rb_my://我的RadioButton的id
                     viewpager.setCurrentItem(3,false);

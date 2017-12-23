@@ -1,0 +1,23 @@
+{
+  "name": "myangtzeu",
+  "version": "1.0.0",
+  "description": "myangtzeu",
+  "main": "index.android.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vito-Yan/MYangtzeu.git"
+  },
+  "author": "Vito-Yan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vito-Yan/MYangtzeu/issues"
+  },
+  "homepage": "https://github.com/Vito-Yan/MYangtzeu#readme",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-native": "^0.51.0"
+  }
+}
