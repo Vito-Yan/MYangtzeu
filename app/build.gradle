@@ -41,5 +41,12 @@ dependencies {
     compile files('libs/gson-2.2.1.jar')
     compile 'com.android.support:design:26.+'
     compile files('libs/glide-3.7.0.jar')
-    compile "com.facebook.react:react-native:+"
+    compile 'com.facebook.react:react-native:+'
+    compile files('libs/jsoup-1.8.3.jar')
+    compile files('libs/phantomjsdriver-1.2.1.jar')
+    compile files('libs/selenium-java-2.44.0.jar')
+    compile files('libs/selenium-remote-driver-2.44.0.jar')
+    compile files('libs/selenium-server-standalone-2.44.0.jar')
+    compile files('libs/selenium-support-2.44.0.jar')
+    compile files('libs/selenium-api-2.44.0.jar')
 }

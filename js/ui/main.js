@@ -48,12 +48,18 @@ export default class LoginActivity extends Component {
     let formData = new FormData();
     formData.append("loginName",this.userName);
     formData.append("pwd",this.password);
-    let url = "http://localhost:8080/loginApp";
-    NetUtil.postJson(url,formData,(responseText) => {
-          alert(responseText);
+//    let url = "http://localhost:8080/loginApp";
+//    NetUtil.postJson(url,formData,(responseText) => {
+//          alert(responseText);
+//          this.onLoginSuccess();
+      storeModule.search('***********','**********').then((map)=>{
+          alert(map['user_id']);
+        },(code,message)=>{
+          alert(message);
           this.onLoginSuccess();
-    })
+      })
 
+    })
 
   };
 
